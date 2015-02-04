@@ -63,43 +63,93 @@ nav {
   padding: 3% 0;
   height: 45em;
   border-top: 4em solid #393939; }
-  .marquee div {
-    width: 40%;
-    margin: 3em auto; }
-    .marquee div h2 {
+  .marquee #desktop-blank {
+    width: 43%;
+    height: 10em;
+    position: relative;
+    left: 3%;
+    margin: 3em auto;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-family: 'ABeeZee', sans-serif; }
+    .marquee #desktop-blank div {
+      font-size: 5em;
+      height: 5em;
+      width: 100%; }
+    .marquee #desktop-blank h2 {
       font-family: 'Cambay', sans-serif;
       line-height: 2em;
       font-size: 2em; }
 
 .three-banner {
   height: 30em;
+  width: 100%;
   position: relative;
   text-align: center;
   background: linear-gradient(to bottom right, #4F7CAC, #fbf5f3);
   border-top: 2px solid #393939;
   border-bottom: 2px solid #393939; }
-  .three-banner div {
-    margin-top: 8%;
-    width: 20%;
-    height: 50%;
-    display: inline-block;
-    border: 1px solid grey; }
-    .three-banner div h3 {
-      font-family: 'Karla', sans-serif; }
-  .three-banner #squares {
-    margin-left: -1em; }
+  .three-banner .vector-block {
+    width: 80%;
+    height: 60%;
+    overflow: auto;
+    margin: 0 auto;
+    margin-top: 5rem; }
+    .three-banner .vector-block .vectors {
+      width: 33%;
+      height: 100%;
+      display: inline-block;
+      border: 1px solid black; }
 
 .projects {
   width: 100%;
-  height: 40em;
-  text-align: center; }
+  height: 60em;
+  text-align: center;
+  overflow: hidden; }
+  .projects #hotorcold {
+    background-image: url('../images/thumbnails/hotorcold.png'); }
+  .projects #stackoverflow {
+    background-image: url('../images/thumbnails/stackoverflow.png'); }
+  .projects #streetfighter {
+    background-image: url('../images/thumbnails/streetfighter.png'); }
+  .projects #musicdiscovery {
+    background-image: url('../images/thumbnails/musicdiscovery.png'); }
+  .projects #youtube_api {
+    background-image: url('../images/thumbnails/youtube_api.png'); }
+  .projects #water-quiz {
+    background-image: url('../images/thumbnails/waterquiz.png'); }
   .projects article {
-    width: 50%;
-    height: 30em;
+    width: 33.333%;
+    font-family: 'Cambay', sans-serif;
+    font-weight: 500;
+    background-size: 120%;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 23em;
     display: inline-block;
-    overflow: hidden;
     text-align: center;
     border: 1px solid black;
-    margin: -2px; }
+    margin: -2px;
+    overflow: hidden;
+    transition: all 2s ease-in-out; }
+    .projects article h2 {
+      position: relative;
+      top: -3em;
+      transition: top 1s ease; }
+    .projects article hr {
+      width: 30%;
+      transition: width 1.5s ease; }
+    .projects article p {
+      position: relative;
+      bottom: -3em;
+      transition: bottom 1s ease; }
+    .projects article:hover {
+      background-size: 100%;
+      background-color: #fff; }
+      .projects article:hover h2 {
+        top: 0; }
+      .projects article:hover hr {
+        width: 100%; }
+      .projects article:hover p {
+        bottom: 0; }
     .projects article div {
       margin-top: 30%; }
