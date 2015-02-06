@@ -38,24 +38,39 @@ header {
 	padding: 0.13em 0 0.4em;
 	position: fixed;
 	width: 105%;
-	background-color: $offwhite;
-	border-bottom: .5em solid $dark-brn;
+	color: $offwhite;
+	background-color: none;
+	//border-bottom: .5em solid $dark-brn;
 	z-index: 2;
-	transition: .7s top ease-in-out;
+	transition: all .7s ease-in-out;
 	div {
 		max-width: 100%;
 		width: 100%;
-		padding: .7em 8em 0em 8em;
+		padding: .7em 6em 0em 8em;
 		h1 {
 			display: inline-block;
 			font-family: $header-font;
 			font-size: 1.5em;
+			span {
+			//	color: #d03111
+			}
 		 }
 	}
 }
 
+.header-fixed {
+	background-color: rgba(225, 225, 225, .8);
+	position: fixed;
+	border-bottom: .5em solid $dark-brn;
+	color: $dark-brn;
+	a {
+		color: $dark-brn;
+	}
+
+}
+
 .header-toggle {
-	top: -10%;
+	top: -15%;
 }
 nav {
 	float: right;
@@ -72,19 +87,25 @@ nav {
 			a {
 				font-family: $sub-heading;
 				text-decoration: none;
-				color: black;
+				color: $offwhite;
 			}
 		}
 	}
 }
 
-.marquee {
-	background-image: url('../images/desktop.jpg'); 
-	opacity: 0.7;
+.banner {
+	background-image: url('../images/KittPeak_stars.jpg'); 
 	background-size: cover;
 	padding: 3% 0;
 	height: 45em;
-	border-top: 4em solid $dark-brn;
+}
+
+.marquee {
+	background-image: url('../images/desktop.jpg'); 
+	background-size: cover;
+	padding: 3% 0;
+	height: 45em;
+	
 	#desktop-blank {
 		width: 43%;
 		height: 10em;
@@ -120,21 +141,139 @@ nav {
 	.vector-block{
 		width: 80%;
 		height: 60%;
-		overflow: auto;
 		margin: 0 auto;
 		margin-top: 5rem;
 		.vectors {
 			width: 33%;
 			height: 100%;
 			display: inline-block;
-			border: 1px solid black;
+			//border: 1px solid black;
+			float: left;
+			#desktopSvg {
+				margin-top: 0;
+				border: 1px solid black;
+			}
+			#phoneSvg {
+				margin-top: 6em;
+				border: 1px solid black;
+			}
+			#tablet{
+				margin-top: 4em;
+				border: 1px solid black;
+			}
 		}
 	}
+	.sub-headings {
+		list-style-type: none;
+		li{
+			display: inline-block;
+		}
+	}
+
 }
+
+	.portfolio{
+		width: 100%;
+		margin-top: 0%;
+			.portfolio-headr{
+				height: 8em;
+				background-color: $dark-brn;
+				text-align: center;
+				h2 {
+					margin: 0;
+					font-family: $header-font;
+				}
+		}
+			.two-group{
+				width: 80%;
+				margin: 0 auto;
+				display: -webkit-flex-;
+				display: flex;
+					.project {
+						border: 3px solid black;
+						width: 41%;
+						padding: 1%;
+						padding-top: 2.5%;
+						margin: 4% 5%;
+						display: inline-block;
+						-moz-transition-property: background-color;
+						-o-transition-property: background-color;
+						-webkit-transition-property: background-color;
+						transition-property: background-color;
+						-moz-transition-duration: 0.2s;
+						-o-transition-duration: 0.2s;
+						-webkit-transition-duration: 0.2s;
+						transition-duration: 0.2s;
+						-moz-transition-timing-function: ease-out;
+						-o-transition-timing-function: ease-out;
+						-webkit-transition-timing-function: ease-out;
+						transition-timing-function: ease-out;
+						-moz-transition-delay: 0s;
+						-o-transition-delay: 0s;
+						-webkit-transition-delay: 0s;
+						transition-delay: 0s;	
+						a {visibility: hidden;}
+						&:hover {
+							background-color: rgba(43, 63, 112, .5);
+								 a {visibility: visible;}
+								}
+						.project-content {
+								width: 91%;
+								margin: 0 auto;
+								position: relative;
+
+								.project-hover {
+									width: 100%;
+									height: 69.5%;
+									border: 3px solid #2B3F70;
+									position: absolute;
+									a {
+										display: none;
+										text-align: center;
+										background-color: transparent;
+										text-transform: uppercase;
+										border: 2px solid #e2e8f2;
+										position: absolute;
+										left: 50%;
+										top: 33%;
+										margin-left: -58px;
+										display: inline-block;
+										padding: .75em;
+										text-decoration: none;
+										color: #fff;
+									}
+								}
+								h2{ 
+									border-bottom: 2px solid black;
+									margin: 0;
+									margin-top: .4em;
+
+									font-family: $sub-heading;
+								}
+								p{
+									font-family: $header-font;
+									font-size: .8em;
+									margin: 0;
+									margin-top: .5em;
+								}
+								img {
+									border: 2px solid white;
+									width: 100%;
+									height: auto;
+						}
+					}
+				}
+			.selected { margin: 0 auto;}
+
+			}
+	}
+
+
+/* Projects
 
 .projects{
 	width: 100%;
-	height: 60em;
+	height: 40em;
 	text-align: center;
 	overflow: hidden;
 	#hotorcold {
@@ -161,62 +300,12 @@ nav {
 		background-image: url('../images/thumbnails/waterquiz.png');
 
 	}
-	article{
-		width: 33.333%;
-		font-family: $sub-heading;
-		font-weight: 500;
-		//opacity: .7;
-		background-size: 120%;
-		background-color: rgba(0,0,0, .6);
-		height: 23em;
-		display: inline-block;
-		text-align: center;
-		border: 1px solid black;
-		margin: -2px;
-		overflow: hidden;
-		-webkit-transition: all 2s ease-in-out;
-     	-moz-transition: all 2s ease-in-out;
-        -o-transition: all 2s ease-in-out;
-      	-ms-transition: all 2s ease-in-out;
-        transition: all 2s ease-in-out;
-        h2 {
-			position: relative;
-			top: -3em;
-			transition: top 1s ease;
-		}
-		hr{
-			width: 30%;
-			transition: width 1.5s ease;
-		}
-		p{
-			position: relative;
-			bottom: -3em;
-			transition: bottom 1s ease;
-		}
-
-		&:hover {
-			background-size: 100%;
-			background: rgba(0,0,0);
-			h2 {
-				top: 0;
-			}
-			hr {
-				width: 100%;
-			}
-			p{
-				bottom: 0;
-			}
-		}
-	div {
-		margin-top: 30%;
-		
-	}
-}
 	
 
 }
 
 
+*/
 
 
 

@@ -23,21 +23,29 @@ header {
   padding: 0.13em 0 0.4em;
   position: fixed;
   width: 105%;
-  background-color: #fbf5f3;
-  border-bottom: 0.5em solid #393939;
+  color: #fbf5f3;
+  background-color: none;
   z-index: 2;
-  transition: 0.7s top ease-in-out; }
+  transition: all 0.7s ease-in-out; }
   header div {
     max-width: 100%;
     width: 100%;
-    padding: 0.7em 8em 0em 8em; }
+    padding: 0.7em 6em 0em 8em; }
     header div h1 {
       display: inline-block;
       font-family: 'ABeeZee', sans-serif;
       font-size: 1.5em; }
 
+.header-fixed {
+  background-color: rgba(225, 225, 225, 0.8);
+  position: fixed;
+  border-bottom: 0.5em solid #393939;
+  color: #393939; }
+  .header-fixed a {
+    color: #393939; }
+
 .header-toggle {
-  top: -10%; }
+  top: -15%; }
 
 nav {
   float: right;
@@ -54,15 +62,19 @@ nav {
       nav ul li a {
         font-family: 'Cambay', sans-serif;
         text-decoration: none;
-        color: black; }
+        color: #fbf5f3; }
+
+.banner {
+  background-image: url('../images/KittPeak_stars.jpg');
+  background-size: cover;
+  padding: 3% 0;
+  height: 45em; }
 
 .marquee {
   background-image: url('../images/desktop.jpg');
-  opacity: 0.7;
   background-size: cover;
   padding: 3% 0;
-  height: 45em;
-  border-top: 4em solid #393939; }
+  height: 45em; }
   .marquee #desktop-blank {
     width: 43%;
     height: 10em;
@@ -92,64 +104,134 @@ nav {
   .three-banner .vector-block {
     width: 80%;
     height: 60%;
-    overflow: auto;
     margin: 0 auto;
     margin-top: 5rem; }
     .three-banner .vector-block .vectors {
       width: 33%;
       height: 100%;
       display: inline-block;
-      border: 1px solid black; }
+      float: left; }
+      .three-banner .vector-block .vectors #desktopSvg {
+        margin-top: 0;
+        border: 1px solid black; }
+      .three-banner .vector-block .vectors #phoneSvg {
+        margin-top: 6em;
+        border: 1px solid black; }
+      .three-banner .vector-block .vectors #tablet {
+        margin-top: 4em;
+        border: 1px solid black; }
+  .three-banner .sub-headings {
+    list-style-type: none; }
+    .three-banner .sub-headings li {
+      display: inline-block; }
 
-.projects {
+.portfolio {
   width: 100%;
-  height: 60em;
-  text-align: center;
-  overflow: hidden; }
-  .projects #hotorcold {
-    background-image: url('../images/thumbnails/hotorcold.png'); }
-  .projects #stackoverflow {
-    background-image: url('../images/thumbnails/stackoverflow.png'); }
-  .projects #streetfighter {
-    background-image: url('../images/thumbnails/streetfighter.png'); }
-  .projects #musicdiscovery {
-    background-image: url('../images/thumbnails/musicdiscovery.png'); }
-  .projects #youtube_api {
-    background-image: url('../images/thumbnails/youtube_api.png'); }
-  .projects #water-quiz {
-    background-image: url('../images/thumbnails/waterquiz.png'); }
-  .projects article {
-    width: 33.333%;
-    font-family: 'Cambay', sans-serif;
-    font-weight: 500;
-    background-size: 120%;
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 23em;
-    display: inline-block;
-    text-align: center;
-    border: 1px solid black;
-    margin: -2px;
-    overflow: hidden;
-    transition: all 2s ease-in-out; }
-    .projects article h2 {
-      position: relative;
-      top: -3em;
-      transition: top 1s ease; }
-    .projects article hr {
-      width: 30%;
-      transition: width 1.5s ease; }
-    .projects article p {
-      position: relative;
-      bottom: -3em;
-      transition: bottom 1s ease; }
-    .projects article:hover {
-      background-size: 100%;
-      background-color: #fff; }
-      .projects article:hover h2 {
-        top: 0; }
-      .projects article:hover hr {
-        width: 100%; }
-      .projects article:hover p {
-        bottom: 0; }
-    .projects article div {
-      margin-top: 30%; }
+  margin-top: 0%; }
+  .portfolio .portfolio-headr {
+    height: 8em;
+    background-color: #393939;
+    text-align: center; }
+    .portfolio .portfolio-headr h2 {
+      margin: 0;
+      font-family: 'ABeeZee', sans-serif; }
+  .portfolio .two-group {
+    width: 80%;
+    margin: 0 auto;
+    display: -webkit-flex-;
+    display: -webkit-flex;
+    display: flex; }
+    .portfolio .two-group .project {
+      border: 3px solid black;
+      width: 41%;
+      padding: 1%;
+      padding-top: 2.5%;
+      margin: 4% 5%;
+      display: inline-block;
+      transition-property: background-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out;
+      transition-delay: 0s; }
+      .portfolio .two-group .project a {
+        visibility: hidden; }
+      .portfolio .two-group .project:hover {
+        background-color: rgba(43, 63, 112, 0.5); }
+        .portfolio .two-group .project:hover a {
+          visibility: visible; }
+      .portfolio .two-group .project .project-content {
+        width: 91%;
+        margin: 0 auto;
+        position: relative; }
+        .portfolio .two-group .project .project-content .project-hover {
+          width: 100%;
+          height: 69.5%;
+          border: 3px solid #2B3F70;
+          position: absolute; }
+          .portfolio .two-group .project .project-content .project-hover a {
+            display: none;
+            text-align: center;
+            background-color: transparent;
+            text-transform: uppercase;
+            border: 2px solid #e2e8f2;
+            position: absolute;
+            left: 50%;
+            top: 33%;
+            margin-left: -58px;
+            display: inline-block;
+            padding: 0.75em;
+            text-decoration: none;
+            color: #fff; }
+        .portfolio .two-group .project .project-content h2 {
+          border-bottom: 2px solid black;
+          margin: 0;
+          margin-top: 0.4em;
+          font-family: 'Cambay', sans-serif; }
+        .portfolio .two-group .project .project-content p {
+          font-family: 'ABeeZee', sans-serif;
+          font-size: 0.8em;
+          margin: 0;
+          margin-top: 0.5em; }
+        .portfolio .two-group .project .project-content img {
+          border: 2px solid white;
+          width: 100%;
+          height: auto; }
+    .portfolio .two-group .selected {
+      margin: 0 auto; }
+
+/* Projects
+
+.projects{
+	width: 100%;
+	height: 40em;
+	text-align: center;
+	overflow: hidden;
+	#hotorcold {
+		background-image: url('../images/thumbnails/hotorcold.png');
+
+	}
+	#stackoverflow {
+		background-image: url('../images/thumbnails/stackoverflow.png');
+
+	}
+	#streetfighter {
+		background-image: url('../images/thumbnails/streetfighter.png');
+
+	}
+	#musicdiscovery {
+		background-image: url('../images/thumbnails/musicdiscovery.png');
+
+	}
+	#youtube_api {
+		background-image: url('../images/thumbnails/youtube_api.png');
+
+	}
+	#water-quiz {
+		background-image: url('../images/thumbnails/waterquiz.png');
+
+	}
+	
+
+}
+
+
+*/
