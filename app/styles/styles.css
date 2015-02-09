@@ -25,7 +25,7 @@ header {
   width: 105%;
   color: #fbf5f3;
   background-color: none;
-  z-index: 2;
+  z-index: 7;
   transition: all 0.7s ease-in-out; }
   header div {
     max-width: 100%;
@@ -44,7 +44,7 @@ header {
   .header-fixed a {
     color: #393939; }
 
-.header-toggle {
+.header-hide {
   top: -15%; }
 
 nav {
@@ -71,72 +71,131 @@ nav {
   height: 45em; }
 
 .marquee {
-  background-image: url('../images/desktop.jpg');
-  background-size: cover;
-  padding: 3% 0;
-  height: 45em; }
+  margin: 0 auto;
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  overflow: hidden;
+  position: relative; }
+  .marquee #desktop-wrapper {
+    position: absolute;
+    top: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    .marquee #desktop-wrapper:after {
+      content: '';
+      position: absolute;
+      background: rgba(51, 71, 89, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; }
+    .marquee #desktop-wrapper img {
+      display: block;
+      width: 1900px;
+      z-index: -2; }
   .marquee #desktop-blank {
-    width: 43%;
-    height: 10em;
-    position: relative;
-    left: 3%;
-    margin: 3em auto;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    outline: 1px solid transparent;
+    /* For Firefox (jagged edges bug) */
+    width: 54%;
+    height: 17em;
+    top: 75px;
+    left: 25.8%;
+    margin: 1em auto;
     font-size: 2em;
     line-height: 1.5em;
-    font-family: 'ABeeZee', sans-serif; }
-    .marquee #desktop-blank div {
-      font-size: 5em;
-      height: 5em;
-      width: 100%; }
-    .marquee #desktop-blank h2 {
-      font-family: 'Cambay', sans-serif;
-      line-height: 2em;
-      font-size: 2em; }
+    font-family: 'ABeeZee', sans-serif;
+    background-color: #4F7CAC;
+    -webkit-transform: matrix3d(1.0531, 0.00191, 0, 0, 0.02167, 1.14045, 0, 0.00004, 0, 0, 1, 0, -22, -14, 0, 1);
+    transform: matrix3d(1.0531, 0.00191, 0, 0, 0.02167, 1.14045, 0, 0.00004, 0, 0, 1, 0, -22, -14, 0, 1);
+    -webkit-transform-origin: 0px 0px 0px;
+    transform-origin: 0px 0px 0px; }
+  .marquee .slideshow {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style-type: none; }
+    .marquee .slideshow li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0); }
+      .marquee .slideshow li.current {
+        pointer-events: auto;
+        z-index: 10;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); }
+    .marquee .slideshow #typing-effect {
+      padding: 3.5%; }
+    .marquee .slideshow .green {
+      background-color: green; }
+    .marquee .slideshow .yellow {
+      background-color: yellow; }
+    .marquee .slideshow .red {
+      background-color: red; }
 
 .three-banner {
-  height: 30em;
-  width: 100%;
+  height: 25em;
+  width: inherit;
   position: relative;
   text-align: center;
   background: linear-gradient(to bottom right, #4F7CAC, #fbf5f3);
-  border-top: 2px solid #393939;
-  border-bottom: 2px solid #393939; }
+  border-top: 2px solid #393939; }
   .three-banner .vector-block {
     width: 80%;
     height: 60%;
     margin: 0 auto;
-    margin-top: 5rem; }
+    margin-top: 3.6rem; }
     .three-banner .vector-block .vectors {
-      width: 33%;
+      width: 33.33333%;
       height: 100%;
       display: inline-block;
+      border: 1px solid black;
       float: left; }
+      .three-banner .vector-block .vectors .v-label {
+        position: absolute;
+        bottom: 0;
+        margin-left: 9%;
+        margin-bottom: 10%; }
+      .three-banner .vector-block .vectors .vector-icon {
+        transition: all 0.7s ease-in-out;
+        position: relative;
+        bottom: 0; }
+      .three-banner .vector-block .vectors:hover .vector-icon {
+        bottom: 2em; }
       .three-banner .vector-block .vectors #desktopSvg {
         margin-top: 0;
-        border: 1px solid black; }
+        padding-right: -1px; }
       .three-banner .vector-block .vectors #phoneSvg {
-        margin-top: 6em;
-        border: 1px solid black; }
+        margin-top: 5.5em; }
       .three-banner .vector-block .vectors #tablet {
-        margin-top: 4em;
-        border: 1px solid black; }
-  .three-banner .sub-headings {
-    list-style-type: none; }
-    .three-banner .sub-headings li {
-      display: inline-block; }
+        margin-top: 4em; }
 
 .portfolio {
   width: 100%;
-  margin-top: 0%; }
+  margin-top: 0%;
+  position: relative; }
   .portfolio .portfolio-headr {
     height: 8em;
     background-color: #393939;
     text-align: center; }
     .portfolio .portfolio-headr h2 {
+      padding-top: 2em;
+      text-decoration: underline;
+      color: #fbf5f3;
       margin: 0;
       font-family: 'ABeeZee', sans-serif; }
   .portfolio .two-group {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: -webkit-flex-;
     display: -webkit-flex;
@@ -146,9 +205,10 @@ nav {
       width: 41%;
       padding: 1%;
       padding-top: 2.5%;
+      -webkit-transform: none;
       margin: 4% 5%;
       display: inline-block;
-      transition-property: background-color;
+      transition-property: all;
       transition-duration: 0.2s;
       transition-timing-function: ease-out;
       transition-delay: 0s; }
@@ -164,8 +224,7 @@ nav {
         position: relative; }
         .portfolio .two-group .project .project-content .project-hover {
           width: 100%;
-          height: 69.5%;
-          border: 3px solid #2B3F70;
+          height: 68.2%;
           position: absolute; }
           .portfolio .two-group .project .project-content .project-hover a {
             display: none;
@@ -180,7 +239,8 @@ nav {
             display: inline-block;
             padding: 0.75em;
             text-decoration: none;
-            color: #fff; }
+            color: #fff;
+            cursor: pointer; }
         .portfolio .two-group .project .project-content h2 {
           border-bottom: 2px solid black;
           margin: 0;
@@ -192,10 +252,43 @@ nav {
           margin: 0;
           margin-top: 0.5em; }
         .portfolio .two-group .project .project-content img {
-          border: 2px solid white;
+          border: 2px solid black;
           width: 100%;
-          height: auto; }
+          height: 68.2%; }
+    .portfolio .two-group .expanded0 {
+      width: 100%;
+      position: relative;
+      -webkit-transform: translate(28%, 15%);
+      transform: translate(28%, 15%); }
+    .portfolio .two-group .expanded1 {
+      width: 100%;
+      position: relative;
+      -webkit-transform: translate(-32%, 15%);
+      transform: translate(-32%, 15%); }
+    .portfolio .two-group .expanded2 {
+      width: 100%;
+      position: relative;
+      -webkit-transform: translate(29%, -70%);
+      transform: translate(29%, -70%); }
+    .portfolio .two-group .expanded3 {
+      width: 100%;
+      position: relative;
+      -webkit-transform: translate(-30%, -70%);
+      transform: translate(-30%, -70%); }
     .portfolio .two-group .selected {
+      margin: 0 auto; }
+  .portfolio .projectOverlay {
+    background-color: black;
+    top: 8em;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transition: all 2s ease-in-out; }
+    .portfolio .projectOverlay div {
+      width: 60%;
+      height: 60%;
       margin: 0 auto; }
 
 /* Projects

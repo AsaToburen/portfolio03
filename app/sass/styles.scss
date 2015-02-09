@@ -40,8 +40,7 @@ header {
 	width: 105%;
 	color: $offwhite;
 	background-color: none;
-	//border-bottom: .5em solid $dark-brn;
-	z-index: 2;
+	z-index: 7;
 	transition: all .7s ease-in-out;
 	div {
 		max-width: 100%;
@@ -66,10 +65,9 @@ header {
 	a {
 		color: $dark-brn;
 	}
-
 }
 
-.header-toggle {
+.header-hide {
 	top: -15%;
 }
 nav {
@@ -101,72 +99,139 @@ nav {
 }
 
 .marquee {
-	background-image: url('../images/desktop.jpg'); 
-	background-size: cover;
-	padding: 3% 0;
-	height: 45em;
-	
-	#desktop-blank {
-		width: 43%;
-		height: 10em;
-		position: relative;
-		left: 3%;
-		margin: 3em auto;
-		//border: 2px solid black;
-		font-size: 2em;
-		line-height: 1.5em;
-		font-family: $header-font;
-		div {
-			font-size: 5em;
-			height:5em;
-			width: 100%;
-		}
-		h2 {
-			font-family: $sub-heading;
-			line-height: 2em;
-			font-size: 2em;
+	margin: 0 auto;
+	width: 100%;
+	height: 0;
+	padding-top: 50%;
+	overflow: hidden;
+	position: relative;
+	#desktop-wrapper {
+			position: absolute;
+			top: 0;
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			&:after{
+				content: '';
+				position: absolute;
+				background: rgba(51,71,89,0.5);
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+			}
+		img {
+			display: block;
+			width: 1900px;
+			z-index: -2;
 		}
 	}
+	
+
+	#desktop-blank {
+			overflow: hidden;
+			position: absolute;
+			z-index: 100;
+			outline: 1px solid transparent; /* For Firefox (jagged edges bug) */
+			width: 54%;
+			height: 17em;
+			top: 75px;
+			left: 25.8%;
+			margin: 1em auto;
+			font-size: 2em;
+			line-height: 1.5em;
+			font-family: 'ABeeZee', sans-serif;
+			background-color: #4F7CAC;
+			transform: matrix3d(1.05310121663985, 0.00191071740128115, 0, 0.000003216696019594, 0.0216749182720241, 1.14045083239828, 0, 0.00003839037105544, 0, 0, 1, 0, -22, -13.9999954223632, 0, 1);
+			transform-origin: 0px 0px 0px;
+}
+			 .slideshow {
+			 		padding: 0;
+					margin: 0;
+					width: 100%;
+					height: 100%;
+					list-style-type: none;
+					li {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						overflow: hidden;
+						pointer-events: none;
+						z-index: 1;
+						transform: translate3d(-100%, 0, 0);
+						&.current {
+							pointer-events: auto;
+							z-index: 10;
+							transform: translate3d(0, 0, 0);
+						}
+					}
+					#typing-effect {
+						padding: 3.5%;
+					}
+					.blue {
+						
+					}
+					.green {
+						background-color: green;
+
+					}
+					.yellow {
+						background-color: yellow;
+					}
+					.red {
+						background-color: red;
+					}
+			 }
 }
 
 .three-banner {
-	height: 30em;
-	width: 100%;
+	height: 25em;
+	width: inherit;
 	position: relative;
 	text-align: center;
 	background: linear-gradient(to bottom right, $cornflower, $offwhite);
 	border-top: 2px solid $dark-brn;
-	border-bottom:2px solid $dark-brn;
 
 	.vector-block{
 		width: 80%;
 		height: 60%;
 		margin: 0 auto;
-		margin-top: 5rem;
+		margin-top: 3.6rem;
 		.vectors {
-			width: 33%;
+			width: 33.333333%;
 			height: 100%;
 			display: inline-block;
-			//border: 1px solid black;
+			border: 1px solid black;
 			float: left;
+			.v-label {
+					position: absolute;
+					bottom: 0;
+					margin-left: 9%;
+					margin-bottom: 10%;
+
+				}
+			.vector-icon {
+				transition: all .7s ease-in-out;
+				position: relative;
+				bottom: 0;
+			}
+			&:hover {
+				.vector-icon {
+					bottom: 2em;
+				}
+			}
+
 			#desktopSvg {
 				margin-top: 0;
-				border: 1px solid black;
+				padding-right: -1px;
 			}
 			#phoneSvg {
-				margin-top: 6em;
-				border: 1px solid black;
+				margin-top: 5.5em;
 			}
 			#tablet{
 				margin-top: 4em;
-				border: 1px solid black;
+
 			}
-		}
-	}
-	.sub-headings {
-		list-style-type: none;
-		li{
-			display: inline-block;
 		}
 	}
 
@@ -175,17 +240,21 @@ nav {
 	.portfolio{
 		width: 100%;
 		margin-top: 0%;
+		position: relative;
 			.portfolio-headr{
 				height: 8em;
 				background-color: $dark-brn;
 				text-align: center;
 				h2 {
+					padding-top: 2em;
+					text-decoration: underline;
+					color: $offwhite;
 					margin: 0;
 					font-family: $header-font;
 				}
 		}
 			.two-group{
-				width: 80%;
+				width: 90%;
 				margin: 0 auto;
 				display: -webkit-flex-;
 				display: flex;
@@ -194,12 +263,13 @@ nav {
 						width: 41%;
 						padding: 1%;
 						padding-top: 2.5%;
+						-webkit-transform: none;
 						margin: 4% 5%;
 						display: inline-block;
-						-moz-transition-property: background-color;
-						-o-transition-property: background-color;
-						-webkit-transition-property: background-color;
-						transition-property: background-color;
+						-moz-transition-property: all;
+						-o-transition-property: all;
+						-webkit-transition-property: all;
+						transition-property: all;
 						-moz-transition-duration: 0.2s;
 						-o-transition-duration: 0.2s;
 						-webkit-transition-duration: 0.2s;
@@ -212,10 +282,14 @@ nav {
 						-o-transition-delay: 0s;
 						-webkit-transition-delay: 0s;
 						transition-delay: 0s;	
+
 						a {visibility: hidden;}
 						&:hover {
 							background-color: rgba(43, 63, 112, .5);
 								 a {visibility: visible;}
+								 img {
+
+								 }
 								}
 						.project-content {
 								width: 91%;
@@ -224,9 +298,10 @@ nav {
 
 								.project-hover {
 									width: 100%;
-									height: 69.5%;
-									border: 3px solid #2B3F70;
+									height: 68.2%;
+									//border: 3px solid #2B3F70;
 									position: absolute;
+
 									a {
 										display: none;
 										text-align: center;
@@ -241,6 +316,7 @@ nav {
 										padding: .75em;
 										text-decoration: none;
 										color: #fff;
+										cursor: pointer;
 									}
 								}
 								h2{ 
@@ -257,14 +333,49 @@ nav {
 									margin-top: .5em;
 								}
 								img {
-									border: 2px solid white;
+									border: 2px solid black;
 									width: 100%;
-									height: auto;
+									height: 68.2%;
 						}
 					}
 				}
+			.expanded0 {
+				width: 100%;
+				position: relative;
+				transform: translate(28%, 15%);
+			}
+			.expanded1 {
+				width: 100%;
+				position: relative;
+				transform: translate(-32%, 15%);
+			}
+			.expanded2 {
+				width: 100%;
+				position: relative;
+				transform: translate(29%, -70%);
+			}
+			.expanded3 {
+				width: 100%;
+				position: relative;
+				transform: translate(-30%, -70%);
+			}
 			.selected { margin: 0 auto;}
+			}
 
+			.projectOverlay {
+				background-color: black;
+    			top: 8em;
+    			left: 0;
+    			position: absolute;
+    			width: 100%;
+    			height: 100%;
+    			z-index: 5;
+    			transition: all 2s ease-in-out;
+    			div {
+    				width: 60%;
+    				height: 60%;
+    				margin: 0 auto;
+    			}
 			}
 	}
 
